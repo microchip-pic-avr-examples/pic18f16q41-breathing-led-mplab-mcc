@@ -4,27 +4,27 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f16q41-breathing-led-mplab-mcc",
-        "version": "",
-        "displayName": "",
+        "version": "2.0.0",
+        "displayName": "BreathingLED on PIC18F16Q41",
         "projectName": "pic18f16q41-breathing-led-mplab-mcc",
-        "shortDescription": "",
+        "shortDescription": "pulsating the LED on the PIC18F16Q41",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ""
+            "semverRange": ">=5.40.0"
         },
         "compiler": [
 			{
 				"name": "XC8",
-				"semverRange": ""
+				"semverRange": "^2.31.0"
 			}
 		],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC18F-Q_DFP",
+            "semverRange": "^1.8.154"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=3.95.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -32,16 +32,29 @@
             "content": {
                 "metaDataVersion": "1.0.0",
                 "category": "com.microchip.device",
-                "name": "",
+                "name": "PIC18F16Q41",
                 "versionRange": "*"
             }
         },
-        "author": "",
+        "author": "Microchip",
         "subcategories": [
+          "MCC",
+       [
+          "Peripherals", "PWM1_16BIT"
+       ],
+       [
+          "Peripherals", "PWM2_16BIT"
+       ],
+       [
+          "Peripherals", "CLC1"
+       ]
         ],
         "peripherals": [
+          "PWM1_16BIT","PWM2_16BIT","CLC1"
         ],
         "keywords": [
+          "MCC",
+          "Melody"
         ],
 		"additionalData": {
 			"longDescription": {

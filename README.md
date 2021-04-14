@@ -1,41 +1,99 @@
-<!-- Please do not change this logo with link -->
 [![MCHP](images/microchip.png)](https://www.microchip.com)
 
-# Update the title for pic18f16q41-breathing-led-mplab-mcc here
+# Breathing LED for pic18f16q41
 
-<!-- This is where the introduction to the example goes, including mentioning the peripherals used -->
+In this application, we will make the LED appear to breathe by using 2 PWM peripheral oscillating at different rates.
 
 ## Related Documentation
 
-<!-- Any information about an application note or tech brief can be linked here. Use unbreakable links!
-     In addition a link to the device family landing page and relevant peripheral pages as well:
-     - [AN3381 - Brushless DC Fan Speed Control Using Temperature Input and Tachometer Feedback](https://microchip.com/00003381/)
-     - [PIC18F-Q10 Family Product Page](https://www.microchip.com/design-centers/8-bit/pic-mcus/device-selection/pic18f-q10-product-family) -->
+* [PIC18F16Q41 Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F06-16Q41-DataSheet-40002214C.pdf)
+
+* [PIC18F16Q41 Device Page](https://www.microchip.com/wwwproducts/en/PIC18F16Q41)
+
+* [PIC18F16Q41 Curiosity Nano Users Guide](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F16Q41-Curiosity-Nano-Hardware-User-Guide-DS50003048A.pdf)
 
 ## Software Used
 
-<!-- All software used in this example must be listed here. Use unbreakable links!
-     - MPLAB® X IDE 5.30 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
-     - MPLAB® XC8 2.10 or a newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
-     - MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-     - MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-     - Microchip PIC18F-Q Series Device Support (1.4.109) or newer [(packs.download.microchip.com/)](https://packs.download.microchip.com/) -->
+* [MPLAB® X IDE](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide)
+* [MPLAB Code Configurator (MCC)](https://www.microchip.com/mplab/mplab-code-configurator)
+* [MPLAB XC8 Compiler](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)
 
 ## Hardware Used
 
-<!-- All hardware used in this example must be listed here. Use unbreakable links!
-     - PIC18F47Q10 Curiosity Nano [(DM182029)](https://www.microchip.com/Developmenttools/ProductDetails/DM182029)
-     - Curiosity Nano Base for Click boards™ [(AC164162)](https://www.microchip.com/Developmenttools/ProductDetails/AC164162)
-     - POT Click board™ [(MIKROE-3402)](https://www.mikroe.com/pot-click) -->
+* [PIC18F16Q41 Product Information](https://www.microchip.com/wwwproducts/en/PIC18F16Q41)
 
 ## Setup
 
-<!-- Explain how to connect hardware and set up software. Depending on complexity, step-by-step instructions and/or tables and/or images can be used -->
+**Step #1: Creating the Project**
++ Microchip Embedded; Standalone Project
++ Enter the Device
+  + For this Project: PIC18F16Q41
++ Enter a name for this project, such as *BreathingLED*
+  + Name: “BreathingLED”
+  + **Note: The project name cannot have any empty spaces**
 
-## Operation
 
-<!-- Explain how to operate the example. Depending on complexity, step-by-step instructions and/or tables and/or images can be used -->
+  **Step #2: MPLAB Code Configurator (MCC)**
+
+  +	Modify the Clock Control
+    +	Set “Clock Source” to Low Frequency Internal Oscillator (LFINTOSC)
+    + Set “Clock Divider” to 1
+
+    ![Clock Settings](images/Picture1.PNG)
+
+
+  **Step #3: Adding PWM and CLC Peripheral**
+  + In Device Resources:
+      + Drivers &rarr; PWM &rarr; PWM1_16BIT
+      + Drivers &rarr; PWM &rarr; PWM2_16BIT
+      + Drivers &rarr; CLC &rarr; CLC1
+  + Once the peripherals are added, modify the peripherals.
+    + The 2 PWM peripherals should oscillate at slightly different rates so we are going to configure the frequencies of the PWM to be slightly different then one another.
+  + PWM1_16BIT
+    + **Hardware Settings:**
+      + Enable PWM: ENABLED
+      + Clock Source: LFINTOSC
+      + Clock Prescaler: No Prescale
+    + **Slice 1 Output Settings:**
+      + Mode: Left aligned mode
+      + Requested Frequency: 0.095Khz
+
+      ![PWM1_16BIT](images/Picture2.PNG)
+
+  + PWM1_16BIT
+    + **Hardware Settings:**
+      + Enable PWM: ENABLED
+      + Clock Source: LFINTOSC
+      + Clock Prescaler: No Prescale
+    + **Slice 1 Output Settings:**
+      + Mode: Left aligned mode
+      + Requested Frequency: 0.0945Khz
+
+      ![PWM2_16BIT](images/Picture3.PNG)
+
+
+  + CLC1
+    + Mode: "AND-OR"
+    + The two PWM signals need to be connected to the top two logic gates on the CLC1 configuration.
+      + Connect PWM1_16BIT to OR gate1
+      + Connect PWM2_16BIT to OR gate2
+
+    ![CLC1 Configuration](images/Picture4.PNG)
+
+
+  **Step #4: Configure the Pins**
+  + Configure the CLC1 output to be connected to pin RC1
+
+    ![Pins](images/Picture5.PNG)
+
+
+  **Step #4: Generate the project**
+  + Click the generate button in MCC to create the appropriate header and source files for this configuration
+
+
+  + If everything is setup correctly, the LED will begin to pulse, similar to a breathing effect.
+
 
 ## Summary
 
-<!-- Summarize what the example has shown -->
+This application shows how to set up the PWM and CLC peripherals to make an LED pulsate
