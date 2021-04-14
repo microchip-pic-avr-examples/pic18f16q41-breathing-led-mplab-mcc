@@ -91,7 +91,7 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
   + Click the generate button in MCC to create the appropriate header and source files for this configuration
 
 
-  + If everything is setup correctly, the LED will begin to pulse, similar to a breathing effect.
+  + If everything is setup correctly, the LED will begin to pulse; similar to a breathing effect.
 
 
 ## Summary
