@@ -41,6 +41,7 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
     + Disable "External Oscillator Mode Selection"
     + Set "Power-up Default Value for COSC" to "Low-Frequency Oscillator"
     + "WDT Operating Mode" is set to "WDT Disabled; SWDTEN is ignored"
+
     ![Config Bits](images/Picture6.PNG)
 
   +	Modify the Clock Control
