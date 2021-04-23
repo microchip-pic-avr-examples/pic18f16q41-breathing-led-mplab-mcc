@@ -1,8 +1,8 @@
 [![MCHP](images/microchip.png)](https://www.microchip.com)
 
-# Breathing LED for pic18f16q41
+# Breathing LED PWM Demo for PIC18F16Q41
 
-In this application, we will make the LED appear to breathe by using 2 PWM peripheral oscillating at different rates.
+In this application, we will make the LED appear to breathe by using 2 PWM peripherals running at different frequencies
 
 ## Related Documentation
 
@@ -14,13 +14,15 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
 
 ## Software Used
 
-* [MPLAB® X IDE](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide)
-* [MPLAB Code Configurator (MCC)](https://www.microchip.com/mplab/mplab-code-configurator)
-* [MPLAB XC8 Compiler](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)
+* [MPLAB® X IDE v5.45](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide)
+* [MPLAB Code Configurator (MCC) v4.1.0](https://www.microchip.com/mplab/mplab-code-configurator)
+  + Melody Library v.1.37.22(or later)
+* [MPLAB XC8 Compiler v2.31](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)
+* [PIC18F-Qf_DFP v1.8.154](https://packs.download.microchip.com)
 
 ## Hardware Used
 
-* [PIC18F16Q41 Product Information](https://www.microchip.com/wwwproducts/en/PIC18F16Q41)
+* [PIC18F16Q41 Curiosity Nano (EV26Q64A)](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV26Q64A)
 
 ## Setup
 
@@ -35,6 +37,12 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
 
   **Step #2: MPLAB Code Configurator (MCC)**
 
+  * Set Configuration Bits
+    + Disable "External Oscillator Mode Selection"
+    + Set "Power-up Default Value for COSC" to "Low-Frequency Oscillator"
+    + "WDT Operating Mode" is set to "WDT Disabled; SWDTEN is ignored"
+    ![Config Bits](images/Picture6.PNG)
+
   +	Modify the Clock Control
     +	Set “Clock Source” to Low Frequency Internal Oscillator (LFINTOSC)
     + Set “Clock Divider” to 1
@@ -48,7 +56,7 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
       + Drivers &rarr; PWM &rarr; PWM2_16BIT
       + Drivers &rarr; CLC &rarr; CLC1
   + Once the peripherals are added, modify the peripherals.
-    + The 2 PWM peripherals should oscillate at slightly different rates so we are going to configure the frequencies of the PWM to be slightly different then one another.
+    + The 2 PWM peripherals are set at slightly different frequencies.
   + PWM1_16BIT
     + **Hardware Settings:**
       + Enable PWM: ENABLED
@@ -56,7 +64,7 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
       + Clock Prescaler: No Prescale
     + **Slice 1 Output Settings:**
       + Mode: Left aligned mode
-      + Requested Frequency: 0.095Khz
+      + Requested Frequency: 0.095 kHz (95 Hz)
 
       ![PWM1_16BIT](images/Picture2.PNG)
 
@@ -67,16 +75,16 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
       + Clock Prescaler: No Prescale
     + **Slice 1 Output Settings:**
       + Mode: Left aligned mode
-      + Requested Frequency: 0.0945Khz
+      + Requested Frequency: 0.0945 kHz (94.5 Hz)
 
       ![PWM2_16BIT](images/Picture3.PNG)
 
 
   + CLC1
     + Mode: "AND-OR"
-    + The two PWM signals need to be connected to the top two logic gates on the CLC1 configuration.
-      + Connect PWM1_16BIT to OR gate1
-      + Connect PWM2_16BIT to OR gate2
+    + The two PWM signals need to be connected to the top two logic gates in the CLC1 configuration.
+      + Connect PWM1_16BIT to OR gate 1
+      + Connect PWM2_16BIT to OR gate 2
 
     ![CLC1 Configuration](images/Picture4.PNG)
 
@@ -96,4 +104,4 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
 
 ## Summary
 
-This application shows how to set up the PWM and CLC peripherals to make an LED pulsate
+This application shows how to set up the PWM and CLC peripherals to make an LED breathe.
