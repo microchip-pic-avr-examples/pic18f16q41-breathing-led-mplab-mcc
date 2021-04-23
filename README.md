@@ -18,7 +18,7 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
 * [MPLAB Code Configurator (MCC) v4.1.0](https://www.microchip.com/mplab/mplab-code-configurator)
   + Melody Library v.1.37.22(or later)
 * [MPLAB XC8 Compiler v2.31](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)
-* [PIC18F-Qf_DFP v1.8.154](https://packs.download.microchip.com)
+* [PIC18F-Q_DFP v1.8.154](https://packs.download.microchip.com)
 
 ## Hardware Used
 
@@ -102,9 +102,9 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
 
   + If everything is setup correctly, the LED will begin to pulse; similar to a breathing effect.
 
+  ![breathingledgif](images/LEDbreathing.gif)
+
 
 ## Summary
 
 This application shows how to set up the PWM and CLC peripherals to make an LED breathe.
-
-![breathingledgif](images/LEDbreathing.gif)
