@@ -105,3 +105,5 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
 ## Summary
 
 This application shows how to set up the PWM and CLC peripherals to make an LED breathe.
+
+![breathingledgif](images/LEDbreathing.gif)
