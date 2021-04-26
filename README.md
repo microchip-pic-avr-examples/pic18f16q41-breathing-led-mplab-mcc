@@ -2,27 +2,27 @@
 
 # Breathing LED PWM Demo for PIC18F16Q41
 
-In this application, we will make the LED appear to breathe by using 2 PWM peripherals running at different frequencies
+In this application, we will make the LED appear to breathe by using 2 PWM peripherals running at different frequencies.
 
 ## Related Documentation
 
 * [PIC18F16Q41 Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F06-16Q41-DataSheet-40002214C.pdf)
 
-* [PIC18F16Q41 Device Page](https://www.microchip.com/wwwproducts/en/PIC18F16Q41)
+* [PIC18F16Q41 Device Page](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV26Q64A?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-breathing-led-mplab-mcc)
 
 * [PIC18F16Q41 Curiosity Nano Users Guide](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F16Q41-Curiosity-Nano-Hardware-User-Guide-DS50003048A.pdf)
 
 ## Software Used
 
-* [MPLAB® X IDE v5.45](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide)
-* [MPLAB Code Configurator (MCC) v4.1.0](https://www.microchip.com/mplab/mplab-code-configurator)
+* [MPLAB® X IDE v5.45](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-breathing-led-mplab-mcc)
+* [MPLAB Code Configurator (MCC) v4.1.0](https://www.microchip.com/mplab/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-breathing-led-mplab-mcc)
   + Melody Library v.1.37.22(or later)
-* [MPLAB XC8 Compiler v2.31](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)
+* [MPLAB XC8 Compiler v2.31](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-breathing-led-mplab-mcc)
 * [PIC18F-Q_DFP v1.8.154](https://packs.download.microchip.com)
 
 ## Hardware Used
 
-* [PIC18F16Q41 Curiosity Nano (EV26Q64A)](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV26Q64A)
+* [PIC18F16Q41 Curiosity Nano (EV26Q64A)](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV26Q64A?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-breathing-led-mplab-mcc)
 
 ## Setup
 
