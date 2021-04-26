@@ -2,7 +2,7 @@
 
 # Breathing LED PWM Demo for PIC18F16Q41
 
-In this application, we will make the LED appear to breathe by using 2 PWM peripherals running at different frequencies.
+In this application, we will make the LED appear to breathe by using 2 Pulse-Width Modulated (PWM) peripherals and a Configurable Logic Cell (CLC).
 
 ## Related Documentation
 
@@ -91,18 +91,18 @@ In this application, we will make the LED appear to breathe by using 2 PWM perip
 
 
   **Step #4: Configure the Pins**
-  + Configure the CLC1 output to be connected to pin RC1
+  + Configure the CLC1 output to be connected to pin RC1.
 
     ![Pins](images/Picture5.PNG)
 
 
   **Step #4: Generate the project**
-  + Click the generate button in MCC to create the appropriate header and source files for this configuration
+  + Click the generate button in MCC to create the appropriate header and source files for this configurationl
 
 
-  + If everything is setup correctly, the LED will begin to pulse; similar to a breathing effect.
+  + If everything is setup correctly, the LED will begin to "breathe", or vary in intensity with time.
 
-  ![breathingledgif](images/LEDbreathing.gif)
+  ![Breathing LED GIF](images/LEDbreathing.gif)
 
 
 ## Summary
